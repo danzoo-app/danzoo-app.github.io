@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ti hanno invitato su Danzoo</title>
+<meta name="description" content="Un amico ti invita su Danzoo, l'app per trovare con chi ballare vicino a te.">
+<meta property="og:title" content="Ti hanno invitato su Danzoo">
+<meta property="og:description" content="Trova con chi ballare, vicino a te: salsa, bachata, tango, liscio e oltre 60 stili.">
+<meta name="robots" content="noindex,follow">
+<link rel="alternate" hreflang="it" href="./invito.html">
+<link rel="alternate" hreflang="en" href="./invito-en.html">
+<link rel="stylesheet" href="./legal.css">
+<script src="./legal.js" defer></script>
+<style>
+  body{font-size:17px}
+  .hero{background:linear-gradient(135deg,var(--verde) 0%,var(--viola) 110%);color:#fff;padding:44px 20px 52px}
+  .hero .wrap{padding:0}
+  .hero h1{font-size:2rem;line-height:1.15;margin:22px 0 10px}
+  .hero p.lead{font-size:1.1rem;opacity:.95;margin:0 0 18px;max-width:560px}
+  .code{display:inline-block;background:rgba(255,255,255,.18);border-radius:16px;padding:10px 18px;margin:4px 0 6px}
+  .code span{display:block;font-size:.8rem;opacity:.9;text-transform:uppercase;letter-spacing:.5px}
+  .code b{font-size:2rem;letter-spacing:6px}
+  .btn{display:inline-block;background:var(--viola);color:#fff;font-weight:700;border-radius:14px;padding:14px 22px;text-decoration:none;font-size:1.05rem;margin:8px 0}
+  .btn:hover{opacity:.93}
+  .card{border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+  .small{font-size:.86rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <nav class="lang" aria-label="Lingua">
+    <a href="./invito.html" data-lang="it" aria-current="true" id="lang-it">IT</a>
+    <a href="./invito-en.html" data-lang="en" id="lang-en">EN</a>
+  </nav>
+  <div class="wrap" style="max-width:var(--maxw);margin:0 auto;padding:0 20px">
+    <div class="brand"><span class="note">&#9835;</span> Danzoo</div>
+    <h1>Un amico ti invita<br>su Danzoo 💃🕺</h1>
+    <p class="lead">L'app per trovare con chi ballare, vicino a te: partner per le serate, per esercitarti o per un corso. Salsa, bachata, tango, liscio e oltre 60 stili.</p>
+    <div class="code" id="codebox" hidden><span>Codice d'invito</span><b id="code"></b></div>
+  </div>
+</header>
+<main>
+<div class="wrap">
+
+<!-- Android, app su Google Play -->
+<div id="box-play" class="card" hidden>
+  <h2 style="margin-top:0">Scarica Danzoo</h2>
+  <p>Tocca il pulsante: si apre Google Play. Al primo accesso l'app ti propone il codice del tuo amico: confermalo e il tuo invito è suo.</p>
+  <p><a class="btn" id="play-link" href="#">Scarica da Google Play</a></p>
+</div>
+
+<!-- iPhone o computer, app su Google Play -->
+<div id="box-other" class="card" hidden>
+  <h2 style="margin-top:0">Danzoo è su Android</h2>
+  <p>Apri questo link dal tuo telefono Android: ti porta su Google Play con il codice già pronto.</p>
+  <p>Su iPhone Danzoo arriva più avanti. Lasciaci la tua email e ti avvisiamo noi.</p>
+  <p><a class="btn" href="./app.html?src=amico#iscriviti">Avvisami quando arriva su iPhone</a></p>
+  <p class="small">Sei già sul telefono Android? Forse il browser è in modalità «Sito desktop»: <a id="play-link-alt" href="#">apri comunque Google Play</a>.</p>
+</div>
+
+<!-- Prima del lancio -->
+<div id="box-soon" class="card" hidden>
+  <h2 style="margin-top:0">Danzoo arriva a fine novembre</h2>
+  <p>L'app esce su Android a fine novembre, gratis per tutti al lancio. Lasciaci la tua email: ti scriviamo il giorno dell'uscita.</p>
+  <p><a class="btn" href="./app.html?src=amico#iscriviti">Avvisami quando esce</a></p>
+  <p class="small">Conserva questo link: dopo l'uscita ti porterà su Google Play con il codice del tuo amico già pronto.</p>
+</div>
+
+<!-- Link senza codice valido -->
+<div id="box-nocode" class="card" hidden>
+  <p>Questo link non contiene un codice d'invito valido. Chiedi al tuo amico di mandartelo di nuovo, oppure scopri Danzoo dalla <a href="./app.html">pagina dell'app</a>.</p>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Hai già Danzoo?</h2>
+  <p>Apri <strong>Impostazioni → Invita gli amici</strong> e scrivi il codice nel riquadro «Hai un codice d'invito?». Si può fare nei primi 7 giorni dopo l'iscrizione.</p>
+</div>
+
+<p class="small">Chi ti ha invitato vedrà il tuo nome e se il tuo invito è confermato, non cosa fai nell'app. Le regole del programma sono nei <a href="./terms.html#inviti">Termini di Servizio</a>, i dati nell'<a href="./privacy.html">Informativa sulla Privacy</a>.</p>
+
+<footer>
+  Danzoo · <a href="./index.html">Documenti legali</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Termini</a>
+</footer>
+</div>
+</main>
+
+<script>
+// ── Impostazioni ──────────────────────────────────────────────────────────────
+// PLAY_LIVE diventa true il giorno del lancio, quando la scheda di Google Play è
+// pubblica. Per le prove dal test interno basta aggiungere &play=1 al link.
+var PLAY_LIVE = false;
+var PACKAGE   = "com.danzoo";
+
+(function(){
+  var q = location.search;
+  if (/[?&]play=1(&|$)/.test(q)) PLAY_LIVE = true;
+  var m = /[?&]c=([A-Za-z0-9]{6})(&|$)/.exec(q);
+  var code = m ? m[1].toUpperCase() : "";
+  var valid = /^[A-HJ-NP-Z2-9]{6}$/.test(code);
+  // Android anche col browser in modalità «Sito desktop»: lì si presenta come un
+  // computer Linux, ma lo schermo resta touch (i Chromebook dicono «CrOS»).
+  var ua = navigator.userAgent;
+  var android = /Android/i.test(ua) ||
+    (/Linux/i.test(ua) && !/CrOS/i.test(ua) && navigator.maxTouchPoints > 0);
+
+  // Le linguette IT/EN tengono il codice
+  document.getElementById("lang-it").href = "./invito.html" + q;
+  document.getElementById("lang-en").href = "./invito-en.html" + q;
+
+  if (!valid) { document.getElementById("box-nocode").hidden = false; return; }
+
+  document.getElementById("code").textContent = code;
+  document.getElementById("codebox").hidden = false;
+
+  if (!PLAY_LIVE) { document.getElementById("box-soon").hidden = false; return; }
+  // Lo stesso link anche nel riquadro per computer e iPhone: se il telefono
+  // Android non viene riconosciuto, chi lo usa non resta bloccato.
+  var play = "https://play.google.com/store/apps/details?id=" +
+    PACKAGE + "&referrer=" + encodeURIComponent("ref=" + code);
+  document.getElementById("play-link").href = play;
+  document.getElementById("play-link-alt").href = play;
+  document.getElementById(android ? "box-play" : "box-other").hidden = false;
+})();
+</script>
+</body>
+</html>
