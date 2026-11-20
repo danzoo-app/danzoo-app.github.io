@@ -313,7 +313,8 @@ receive notifications, or don't help us improve the App.</p>
       four settings: everyone, only people whose interest you accepted (default), only Premium
       users, nobody. When you accept an interest you choose <em>which</em> channels to share —
       WhatsApp, Instagram, TikTok, email, website — one by one, and you can revoke them at any
-      time under Settings → Shared contacts. If you choose “everyone”, you still pick which
+      time under Settings → Shared contacts. If you cancel a connection (from My contacts), the
+      sharing is revoked automatically, both ways. If you choose “everyone”, you still pick which
       channels to make public: the others stay private.</li>
   <li>Remember that once you have shared a contact detail, the person receiving it may have
       noted or used it before revocation: revoking hides it in the App, it does not remove it
@@ -490,7 +491,9 @@ notification tokens and your login account. In the list of the person who invite
 fact that there was an invite remains, without your name. Only the information
 about moderation decisions concerning you, the administrator log and the App error log (90 days
 at most) remain, for the periods above.
-Server backups are overwritten within a few days according to the provider's cycle.</p>
+Server backups are overwritten within a few days according to the provider's cycle. Before each
+database update the Controller also makes a backup copy, kept in an encrypted archive on one of
+its devices and deleted within 30 days.</p>
 
 <!-- ════════════════════════════════════════════════════════════════════ -->
 <h2 id="rights">13. Your rights and how to exercise them</h2>
